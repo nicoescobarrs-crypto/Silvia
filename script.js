@@ -7,45 +7,6 @@ const state = {
 };
 
 /* ============================================================
-   Floating background hearts
-   ============================================================ */
-function createFloatingHearts(count = 22) {
-  const container = document.getElementById('hearts-bg');
-  const symbols = ['💗', '💖', '💕', '💓', '❤️'];
-
-  for (let i = 0; i < count; i++) {
-    const heart = document.createElement('span');
-    heart.className = 'floating-heart';
-    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-
-    const left = Math.random() * 100;
-    const size = 14 + Math.random() * 22;
-    const duration = 9 + Math.random() * 10;
-    const delay = Math.random() * 12;
-    const drift = (Math.random() * 120 - 60) + 'px';
-
-    heart.style.left = left + '%';
-    heart.style.fontSize = size + 'px';
-    heart.style.animationDuration = duration + 's';
-    heart.style.animationDelay = delay + 's';
-    heart.style.setProperty('--drift', drift);
-
-    container.appendChild(heart);
-  }
-
-  // A handful of sparkles scattered around for extra polish
-  for (let i = 0; i < 10; i++) {
-    const sparkle = document.createElement('span');
-    sparkle.className = 'sparkle';
-    sparkle.textContent = '✦';
-    sparkle.style.left = Math.random() * 100 + '%';
-    sparkle.style.top = Math.random() * 100 + '%';
-    sparkle.style.animationDelay = (Math.random() * 3) + 's';
-    container.appendChild(sparkle);
-  }
-}
-
-/* ============================================================
    The "No" button — impossible to press
    ============================================================ */
 function initNoButtonEvasion() {
@@ -240,7 +201,6 @@ async function saveResponse() {
    Wire everything up
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
-  createFloatingHearts();
   initNoButtonEvasion();
 
   // Screen 1 -> Screen 2
