@@ -17,12 +17,12 @@
  */
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDK8g4D17RUm2J0eddTWTz38ZmVdjJfy2w",
-  authDomain: "silvia-5cc41.firebaseapp.com",
-  projectId: "silvia-5cc41",
-  storageBucket: "silvia-5cc41.firebasestorage.app",
-  messagingSenderId: "silvia-5cc41.firebasestorage.app",
-  appId: "1:194212500531:web:dbb8e369e79cdd0b413f46"
+  apiKey: "YOUR_API_KEY_HERE",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID_HERE",
+  appId: "YOUR_APP_ID_HERE"
 };
 
 // Initialize Firebase (compat SDK — no bundler required)
