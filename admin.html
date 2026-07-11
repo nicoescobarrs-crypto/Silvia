@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Date Invitation Responses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(160deg, #fff5f9 0%, #ffe0ee 100%);
+      margin: 0;
+      padding: 32px 16px;
+      color: #5c2340;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 4px;
+    }
+
+    p.subtitle {
+      color: #9a5c7a;
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+
+    .table-card {
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 16px 40px rgba(255, 105, 180, 0.25);
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    thead {
+      background: #ff69b4;
+      color: white;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fff0f6;
+    }
+
+    tbody tr:hover {
+      background: #ffe3ef;
+    }
+
+    .empty-state, .loading-state {
+      padding: 40px 16px;
+      text-align: center;
+      color: #9a5c7a;
+    }
+
+    .refresh-btn {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .refresh-btn:hover {
+      background: #ff4f9e;
+    }
+
+    .device-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: #ffd6e8;
+      color: #ff4f9e;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>💌 Date Invitation — Responses</h1>
+    <p class="subtitle">Every answer she's submitted, newest first.</p>
+
+    <button class="refresh-btn" id="refresh-btn" type="button">Refresh</button>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Place</th>
+            <th>Time Answer</th>
+            <th>Device</th>
+          </tr>
+        </thead>
+        <tbody id="responses-body">
+          <!-- Rows injected by admin.js -->
+        </tbody>
+      </table>
+      <div class="loading-state" id="loading-state">Loading responses…</div>
+      <div class="empty-state" id="empty-state" style="display: none;">No responses yet 💗</div>
+    </div>
+  </div>
+
+  <!-- Firebase (compat build keeps this a plain, no-bundler-needed setup) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+  <script src="firebaseConfig.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

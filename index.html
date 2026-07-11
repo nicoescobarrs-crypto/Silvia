@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>A Question For Silvietta 💕</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating hearts background layer (populated by JS) -->
+  <div id="hearts-bg" class="hearts-bg" aria-hidden="true"></div>
+
+  <!-- Confetti canvas layer -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <main class="app">
+
+    <!-- ===================== SCREEN 1 ===================== -->
+    <section class="screen active" id="screen-1" data-screen="1">
+      <div class="card fade-in">
+        <p class="eyebrow">a little invitation</p>
+        <h1 class="title">💕 Do you want to go on a Date with me? 💕</h1>
+
+        <div class="button-stage">
+          <button class="btn btn-yes" id="btn-yes" type="button">YESSS 💖</button>
+          <button class="btn btn-no" id="btn-no" type="button">No</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SCREEN 2 ===================== -->
+    <section class="screen" id="screen-2" data-screen="2">
+      <div class="card fade-in">
+        <p class="eyebrow">step one</p>
+        <h2 class="title">Where would you like us to go?</h2>
+
+        <div class="option-grid">
+          <button class="btn btn-option" data-place="Garda" type="button">Garda</button>
+          <button class="btn btn-option" data-place="Peschiera di Garda" type="button">Peschiera di Garda</button>
+          <button class="btn btn-option" data-place="Verona" type="button">Verona</button>
+          <button class="btn btn-option" data-place="Padova" type="button">Padova</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SCREEN 3 ===================== -->
+    <section class="screen" id="screen-3" data-screen="3">
+      <div class="card fade-in">
+        <p class="eyebrow">step two</p>
+        <h2 class="title">💖 Can I reserve you all day long?</h2>
+
+        <div class="option-stack">
+          <button class="btn btn-option" data-time="I'm all yours ❤️" type="button">I'm all yours ❤️</button>
+          <button class="btn btn-option" data-time="We'll talk about times later 🥺" type="button">We'll talk about times later 🥺</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL SCREEN ===================== -->
+    <section class="screen" id="screen-4" data-screen="4">
+      <div class="card fade-in">
+        <div class="final-emoji">❤️</div>
+        <h2 class="title">All set up! ❤️</h2>
+        <p class="subtitle">See you on the 20th 🥰</p>
+        <div class="final-hearts" id="final-hearts" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- Tiny loading spinner used between screens -->
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader-heart">💗</div>
+    </div>
+
+  </main>
+
+  <!-- Firebase (compat build keeps this a plain, no-bundler-needed setup) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+  <script src="firebaseConfig.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
