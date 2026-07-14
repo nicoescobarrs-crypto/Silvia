@@ -13,7 +13,6 @@
   --shadow-pink: rgba(255, 105, 180, 0.35);
 
   --font-body: 'Poppins', sans-serif;
-  --font-display: 'Playfair Display', serif;
 
   --radius-lg: 28px;
   --radius-md: 18px;
@@ -112,9 +111,9 @@ body::before {
 }
 
 .title {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
   font-size: 1.6rem;
   line-height: 1.35;
   margin: 0 0 28px;
